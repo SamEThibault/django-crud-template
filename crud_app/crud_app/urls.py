@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 # the second path includes all patterns specified in /blog/urls.py
+# Similar to jinja 2 templating engine
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('blog.urls')),
