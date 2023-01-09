@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from users import views as user_views
 
-# the second path includes all patterns specified in /blog/urls.py
+# the third path includes all patterns specified in /blog/urls.py
+# You can also import the view directly, as seen in the user_views
 # Similar to jinja 2 templating engine
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("register/", user_views.register, name='register'),
     path("", include('blog.urls')),
 ]

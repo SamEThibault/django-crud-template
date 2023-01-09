@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>
-        {{ title }}
-    </title>
-</head>
+  <head>
+    <title>{{ title }}</title>
+  </head>
 
-<body>
+  <body>
+    {% if messages %} 
+        {% for message in messages %}
+            <div> {{ message }} </div>
+        {% endfor %} 
+    {% endif %} 
     {% block content %}{% endblock %}
-</body>
+  </body>
 </html>
