@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from .models import Post
 
 
 # Can pass query data to template using jinja2-like syntax
+@login_required
 def home(request):
 
     context = {

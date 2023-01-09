@@ -11,8 +11,7 @@ def register(request):
         # if everything is valid, show a message and redirect to the home page
         if form.is_valid():
             form.save()  # save user
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}!')
+            messages.success(request, 'Your account has been created!')
             return redirect('blog-home')
     else:
         # if it's not a post request, start the form empty
